@@ -53,28 +53,28 @@ class CT {
      } //---------------------- constructeur pour CT
           
           
-     Function Imprimer_form ($action, $css)
+    Function Imprimer_form ($action, $css)
 		{
-            $listeRdr[1] = "oui";
-            $listeRdr[0] = "non";
-			print('<table border="0" bgcolor="#EBEBEB" align="center"><tr><td>');
-			print(Imprime_titreListe("Gestion d'un compte", "titre"));
-			print("<br>");
-			$f = new Formulaire ("POST", "comptes.php");
-			$f->debutTable(HORIZONTAL);
-			$f->champTexte("&nbsp;no du compte", "ct_no", $this->ct_no, 15, 15);
-			$f->champTexte("&nbsp;nom du compte", "ct_nom", $this->ct_nom, 50, 50);
-			$f->champTexte("&nbsp;0 = d&eacute;penses<br />&nbsp;1 = revenus", "ct_genre", $this->ct_genre, 12, 1);
-			$f->champTexte("&nbsp;1 = niveau titre<br />&nbsp;2 = niveau compte", "ct_niveau", $this->ct_niveau, 13, 1);
-            $f->champListe("&nbsp;rdr", "ct_rdr", $this->ct_rdr, 2, $listeRdr);
-			$f->champCache("ct_id", $this->ct_id);
-			$f->finTable();
-			$f->debutTable(HORIZONTAL);
-			$f->champValider ("sauver", "action");
-			$f->finTable();
-			$f->fin();
-			print('</td></tr></table>');
-		} // fin Imprimer_form -----------------------
+       $listeRdr[1] = "oui";
+       $listeRdr[0] = "non";
+       print('<table border="0" bgcolor="#EBEBEB" align="center"><tr><td>');
+       print(Imprime_titreListe("Gestion d'un compte", "titre"));
+       print("<br>");
+       $f = new Formulaire ("POST", "comptes.php");
+       $f->debutTable(HORIZONTAL);
+       $f->champTexte("&nbsp;no du compte", "ct_no", $this->ct_no, 15, 15);
+       $f->champTexte("&nbsp;nom du compte", "ct_nom", $this->ct_nom, 50, 50);
+       $f->champTexte("&nbsp;0 = d&eacute;penses<br />&nbsp;1 = revenus", "ct_genre", $this->ct_genre, 12, 1);
+       $f->champTexte("&nbsp;1 = niveau titre<br />&nbsp;2 = niveau compte", "ct_niveau", $this->ct_niveau, 13, 1);
+       $f->champListe("&nbsp;rdr", "ct_rdr", $this->ct_rdr, 2, $listeRdr);
+       $f->champCache("ct_id", $this->ct_id);
+       $f->finTable();
+       $f->debutTable(HORIZONTAL);
+       $f->champValider ("sauver", "action");
+       $f->finTable();
+       $f->fin();
+       print('</td></tr></table>');
+     } // fin Imprimer_form -----------------------
           
           
      Function Sauver ($bd)
