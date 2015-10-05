@@ -37,21 +37,20 @@ class CT {
            fonction MAJ qui ne doit pas comprendre la clé primaire
           ********************************************************/
           
-           $this->i = 0;
+       $this->i = 0;
           
-           foreach($this->enregis as $value)
-           {
-               if ($this->i == 0) {
-                   $this->champs .= $value;
-               } else {
-                   $this->champs .= ", " . $value ;
-               }
-               $this->{$value} = "";
-               $this->i++;
-           }
-           $this->nomTable = $table;
-           return;
-           } //---------------------- constructeur pour CT
+       foreach($this->enregis as $value) {
+         if ($this->i == 0) {
+           $this->champs .= $value;
+         } else {
+           $this->champs .= ", " . $value ;
+         }
+         $this->{$value} = "";
+            $this->i++;
+       }
+       $this->nomTable = $table;
+       return;
+     } //---------------------- constructeur pour CT
           
           
      Function Imprimer_form ($action, $css)
